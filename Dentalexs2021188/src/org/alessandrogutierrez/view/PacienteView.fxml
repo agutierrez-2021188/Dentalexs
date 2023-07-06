@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Polyline?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.alessandrogutierrez.controller.PacienteController">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="1100.0" style="-fx-background-color: #8bcbc3;">
+         <children>
+            <Polyline fill="#5177bc" layoutX="44.0" layoutY="40.0" opacity="0.68" points="-50.0, -40.0, 390.0, -51.0, -57.0, 375.0, -57.0, -51.0" strokeType="INSIDE" />
+            <Pane layoutX="960.0" prefHeight="400.0" prefWidth="140.0" style="-fx-background-color: #5177bc;">
+               <children>
+                  <VBox layoutX="5.0" layoutY="173.0" prefHeight="170.0" prefWidth="130.0">
+                     <children>
+                        <Button fx:id="btnNuevo" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#nuevo" prefHeight="40.0" prefWidth="160.0" styleClass="button1" stylesheets="@../resource/ClinicaDentalCSS.css" text="Nuevo" textFill="WHITE">
+                           <font>
+                              <Font name="Times New Roman" size="15.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgNuevo" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/nuevo.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnEliminar" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#eliminar" prefHeight="40.0" prefWidth="160.0" styleClass="button1" stylesheets="@../resource/ClinicaDentalCSS.css" text="Eliminar" textFill="WHITE">
+                           <font>
+                              <Font name="Times New Roman" size="15.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgEliminar" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/Eliminar.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnEditar" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#editar" prefHeight="40.0" prefWidth="160.0" styleClass="button1" stylesheets="@../resource/ClinicaDentalCSS.css" text="Editar" textFill="WHITE">
+                           <font>
+                              <Font name="Times New Roman" size="15.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgEditar" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/editar.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnReporte" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#reporte" prefHeight="40.0" prefWidth="160.0" styleClass="button1" stylesheets="@../resource/ClinicaDentalCSS.css" text="Reporte" textFill="WHITE">
+                           <font>
+                              <Font name="Times New Roman" size="15.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgReporte" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/reporte.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Pane layoutX="7.0" layoutY="123.0" prefHeight="40.0" prefWidth="127.0" style="-fx-background-color: #53acc5; -fx-background-radius: 25;">
+                     <children>
+                        <Label layoutX="16.0" layoutY="4.0" prefHeight="29.0" prefWidth="110.0" text="Pacientes" textFill="WHITE">
+                           <font>
+                              <Font name="Times New Roman" size="26.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <ImageView fitHeight="114.0" fitWidth="110.0" layoutX="15.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/doctorPacientes.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="66.0" fitWidth="63.0" layoutX="39.0" layoutY="330.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/homeB.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <GridPane fx:id="grpFechas" layoutX="22.0" layoutY="14.0" prefHeight="110.0" prefWidth="881.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="10.0" prefWidth="107.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="91.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="326.0" minWidth="10.0" prefWidth="129.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="343.0" minWidth="10.0" prefWidth="171.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="259.0" minWidth="10.0" prefWidth="105.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="317.0" minWidth="10.0" prefWidth="285.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Nombres" textFill="#0b1b2b" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Times New Roman" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="Apellidos" textFill="#0b1b2b" GridPane.columnIndex="4">
+                     <font>
+                        <Font name="Times New Roman" size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="1.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label prefWidth="55.0" text="Sexo" textFill="#0b1b2b" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Times New Roman" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="Fecha Nacimiento" textFill="#0b1b2b" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Times New Roman" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="Dirección" textFill="#0b1b2b" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Times New Roman" size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="1.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Teléfono" textFill="#0b1b2b" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Times New Roman" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="25.0" prefWidth="127.0" text="Fecha Primera Visita" textFill="#0b1b2b" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Times New Roman" size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Código Paciente" textFill="#0b1b2b">
+                     <font>
+                        <Font name="Times New Roman" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtNombresPaciente" editable="false" prefHeight="28.0" prefWidth="159.0" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="Times New Roman Bold" size="16.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="3.0" right="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="txtApellidosPaciente" editable="false" prefHeight="28.0" prefWidth="159.0" GridPane.columnIndex="5">
+                     <font>
+                        <Font name="Times New Roman Bold" size="16.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="3.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="txtSexo" editable="false" prefHeight="28.0" prefWidth="159.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Times New Roman Bold" size="16.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="txtDireccionPaciente" editable="false" prefHeight="29.0" prefWidth="283.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Times New Roman Bold" size="16.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtTelefonoPersonal" editable="false" prefHeight="28.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Times New Roman Bold" size="16.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="txtCodigoPaciente" editable="false" prefHeight="28.0" prefWidth="159.0" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Times New Roman Bold" size="16.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+            <TableView fx:id="tblPacientes" layoutX="14.0" layoutY="125.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="264.0" prefWidth="930.0" stylesheets="@../resource/ClinicaDentalCSS.css">
+              <columns>
+                <TableColumn fx:id="colCodigoPaciente" prefWidth="99.0" text="Cod. Paciente" />
+                <TableColumn fx:id="colNombresPaciente" prefWidth="112.0" text="Nombres" />
+                  <TableColumn fx:id="colApellidosPaciente" prefWidth="106.0" text="Apellidos" />
+                  <TableColumn fx:id="colSexo" minWidth="0.0" prefWidth="50.0" text="Sexo" />
+                  <TableColumn fx:id="colFechaNacimiento" prefWidth="104.0" text="Fecha Nac." />
+                  <TableColumn fx:id="colDireccionPaciente" prefWidth="212.0" text="Dirección" />
+                  <TableColumn fx:id="colTelefonoPersonal" prefWidth="100.0" text="Teléfono" />
+                  <TableColumn fx:id="colFechaPrimeraVisita" prefWidth="134.0" text="Primera Visita" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
